@@ -4,4 +4,22 @@
   border-radius: 25px;
   padding: .7rem 1.8rem;
   cursor: pointer;
+  transition: .3s;
+  background: var(--color-light-gray);
+  background: var(--gradient-light-gray);
+}
+
+.button.-bluepurple {
+  background: var(--color-blue-purple);
+  background: var(--gradient-blue-purple);
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 2px rgba(100, 100, 100, 0.4);
+}
+
+.button:active {
+  transform: scale(0.97);
+  box-shadow: none;
 }
