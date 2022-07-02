@@ -9,7 +9,7 @@
   background: var(--gradient-light-gray);
 }
 
-.button.-bluepurple {
+.button.button-bluepurple {
   background: var(--color-blue-purple);
   background: var(--gradient-blue-purple);
 }
