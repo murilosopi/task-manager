@@ -1,5 +1,9 @@
-.l-form .input {
-  margin-top: .7rem;
+.l-form .form-control {
+  margin-bottom: .7rem;
+}
+
+.l-form .form-area .form-control:last-child {
+  margin-bottom: 0;
 }
 
 .l-form .form-area {
