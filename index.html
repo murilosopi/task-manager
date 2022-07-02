@@ -8,8 +8,11 @@
   <link rel="stylesheet" href="assets/styles/base/normalize.css">
   <link rel="stylesheet" href="assets/styles/base/colors.css">
   <link rel="stylesheet" href="assets/styles/layout/l-container.css">
+  <link rel="stylesheet" href="assets/styles/layout/l-form.css">
   <link rel="stylesheet" href="assets/styles/module/lead.css">
+  <link rel="stylesheet" href="assets/styles/module/form.css">
   <link rel="stylesheet" href="assets/styles/module/button.css">
+  <link rel="stylesheet" href="assets/styles/layout/l-center.css">
   <link rel="stylesheet" href="assets/styles/module/input.css">
   <link rel="stylesheet" href="assets/styles/state/is.css">
 
@@ -26,7 +29,7 @@
       <hr class="lead-hr">
     </header>
 
-    <form action="index.html" method="POST" class="form">
+    <form action="index.html" method="POST" class="l-form form">
       <fieldset class="form-area">
         <legend class="form-legend">
           <i class="fa-solid fa-key"></i>
@@ -57,11 +60,14 @@
         </div>
       </fieldset>
 
-      <button type="button" class="button">Create account</button>
-
-      <button type="submit" class="button button-bluepurple">
-        Log-in
-      </button>
+      <div class="l-button">
+        <button type="button" class="button">
+          Create account
+        </button>
+        <button type="submit" class="button button-bluepurple">
+          Log-in
+        </button>
+      </div>
     </form>
 
     <form action="index.html" method="POST" class="is-hidden">
