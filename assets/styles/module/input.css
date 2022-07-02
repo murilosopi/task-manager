@@ -30,6 +30,6 @@
 .input .text-input:focus + .floating-label,
 .input .text-input:not(:placeholder-shown) + .floating-label{
   font-size: 1em;
-  top: -0.5rem;
+  top: -0.3rem;
   opacity: 1;
 }
