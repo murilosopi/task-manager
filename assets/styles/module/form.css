@@ -1,4 +1,50 @@
 .form .form-legend {
-  font-size: 1.2rem;
+  width: 100%;
   text-align: center;
+  font-size: 1.2rem;
+}
+
+.form-control {
+  padding-top: 1rem;
+  position: relative;
+  transition: .3s;
+}
+
+.form-control .text-input {
+  min-width: 100%;
+  padding: 1rem;
+  border: none;
+  border-radius: 2rem;
+  background-color: var(--color-light-gray);
+  transition: .1s;
+}
+
+.form-control .text-input::placeholder {
+  color: transparent;
+}
+
+.form-control .text-input.text-input-placeholder::placeholder {
+  color: var(--color-dark-gray);
+  opacity: 1;
+}
+
+.form-control .text-input:focus {
+  outline: 3px groove var(--color-blue-purple);
+}
+
+.form-control .floating-label {
+  font-size: 1.1em;
+  color: var(--color-dark-gray);
+  position: absolute;
+  top: 2rem;
+  left: 1rem;
+  pointer-events: none;
+  transition: .5s;
+}
+
+.form-control .text-input:focus + .floating-label,
+.form-control .text-input:not(:placeholder-shown) + .floating-label{
+  font-size: 1em;
+  top: -0.3rem;
+  opacity: 1;
 }
