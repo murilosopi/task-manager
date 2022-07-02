@@ -1,0 +1,35 @@
+.input {
+  padding-top: 1rem;
+  position: relative;
+  transition: .3s;
+}
+
+.input .text-input {
+  min-width: 100%;
+  padding: 1rem;
+  border: none;
+  border-radius: 2rem;
+  background-color: var(--color-light-gray);
+}
+
+.input .text-input::placeholder {
+  color: transparent;
+}
+
+.input .floating-label {
+  font-size: 1.1em;
+  color: var(--color-dark-gray);
+  position: absolute;
+  top: 2rem;
+  left: 1rem;
+  opacity: 0.8;
+  pointer-events: none;
+  transition: .5s;
+}
+
+.input .text-input:focus + .floating-label,
+.input .text-input:not(:placeholder-shown) + .floating-label{
+  font-size: 1em;
+  top: -0.5rem;
+  opacity: 1;
+}
