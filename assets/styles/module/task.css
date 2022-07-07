@@ -1,0 +1,28 @@
+.task::after {
+  content: '';
+  display: block;
+  margin-top: 1rem;
+  margin-left: auto;
+  width: 45%;
+  height: 1px;
+  background-color: var(--color-dark-gray);
+  opacity: 0.2;
+}
+
+.task .task-desc {
+  order: 1;
+  text-align: justify;
+}
+
+.task .task-control {
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.task .task-control:hover {
+  transform: scale(1.1);
+}

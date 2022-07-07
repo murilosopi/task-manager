@@ -10,9 +10,13 @@
   <link rel="stylesheet" href="assets/styles/module/button.css">
   <link rel="stylesheet" href="assets/styles/layout/l-container.css">
   <link rel="stylesheet" href="assets/styles/layout/l-center.css">
+  <link rel="stylesheet" href="assets/styles/layout/l-end.css">
+  <link rel="stylesheet" href="assets/styles/layout/l-task.css">
   <link rel="stylesheet" href="assets/styles/module/lead.css">
   <link rel="stylesheet" href="assets/styles/module/title.css">
+  <link rel="stylesheet" href="assets/styles/module/task.css">
   <link rel="stylesheet" href="assets/styles/state/is.css">
+  <link rel="stylesheet" href="assets/styles/state/no.css">
 
   <script src="https://kit.fontawesome.com/fe0f6eac9b.js" crossorigin="anonymous"></script>
 </head>
@@ -24,54 +28,58 @@
   </header>
   <main>
     <h2 class="title title-center">To do</h2>
-    <ul>
+    <ul class="l-task">
       <li>
-        <article>
-          <h3>[Task title]</h3>
-          <p>[Task description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto mollitia dolores perferendis ea voluptatibus obcaecati]</p>
+        <article class="task">
+          <h3 class="task-title">[Title]</h3>
+          <p class="task-desc">[Description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto mollitia dolores perferendis ea voluptatibus obcaecati]</p>
 
-          <button class="fa-solid fa-pen-to-square">
-            <div class="is-hidden-sr-except">
-              Edit
-            </div>
-          </button>
-
-          <button class="fa-solid fa-circle-check">
-            <div class="is-hidden-sr-except">
-              Done
-            </div>
-          </button>
-          
-          <button class="fa-solid fa-trash">
-            <div class="is-hidden-sr-except">
-              Delete
-            </div>
-          </button>
+          <div class="l-end">
+            <button class="fa-solid fa-pen-to-square task-control" type="button">
+              <div class="is-hidden-sr-except">
+                Edit
+              </div>
+            </button>
+  
+            <button class="fa-solid fa-circle-check task-control" type="button">
+              <div class="is-hidden-sr-except">
+                Done
+              </div>
+            </button>
+            
+            <button class="fa-solid fa-trash task-control" type="button">
+              <div class="is-hidden-sr-except">
+                Delete
+              </div>
+            </button>
+          </div>
         </article>
       </li>
 
       <li>
-        <article>
-          <h3>[Task title]</h3>
-          <p>[Task description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto mollitia dolores perferendis ea voluptatibus obcaecati]</p>
+        <article class="task">
+          <h3 class="task-title">[Title]</h3>
+          <p class="task-desc">[Description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto mollitia dolores perferendis ea voluptatibus obcaecati]</p>
 
-          <button class="fa-solid fa-pen-to-square">
-            <span class="is-hidden-sr-except">
-              Edit
-            </span>
-          </button>
-
-          <button class="fa-solid fa-circle-check">
-            <span class="is-hidden-sr-except">
-              Done
-            </span>
-          </button>
-          
-          <button class="fa-solid fa-trash">
-            <span class="is-hidden-sr-except">
-              Delete
-            </span>
-          </button>
+          <div class="l-end">
+            <button class="fa-solid fa-pen-to-square task-control" type="button">
+              <div class="is-hidden-sr-except">
+                Edit
+              </div>
+            </button>
+  
+            <button class="fa-solid fa-circle-check task-control" type="button">
+              <div class="is-hidden-sr-except">
+                Done
+              </div>
+            </button>
+            
+            <button class="fa-solid fa-trash task-control" type="button">
+              <div class="is-hidden-sr-except">
+                Delete
+              </div>
+            </button>
+          </div>
         </article>
       </li>
     </ul>
