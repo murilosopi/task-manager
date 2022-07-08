@@ -29,7 +29,7 @@
       <hr class="lead-hr">
     </header>
 
-    <form action="index.html" method="POST" class="l-form form is-hidden">
+    <form action="index.html" method="POST" class="l-form form">
       <fieldset class="form-area">
         <legend class="form-legend">
           <i class="fa-solid fa-key"></i>
@@ -47,14 +47,7 @@
             Password
           </label>
         </div>
-      </fieldset>
-
-      <fieldset class="form-area">
-        <legend class="form-legend">
-          <i class="fa-solid fa-user-check"></i>
-          User preferences
-        </legend>
-        <div>
+        <div class="l-center">
           <input type="checkbox" name="keep_log" id="keep-log">
           <label for="keep-log">Keep me logged</label>
         </div>
@@ -70,7 +63,7 @@
       </div>
     </form>
 
-    <form action="index.html" method="POST" class="l-form form">
+    <form action="index.html" method="POST" class="l-form form is-hidden">
       <fieldset class="form-area">
         <legend class="form-legend">
           <i class="fa-solid fa-id-card"></i>
@@ -88,7 +81,7 @@
       </fieldset>
 
       <fieldset class="form-area">
-        <legend class="form-legend">
+        <legend class="form-legend no-margin">
           <i class="fa-solid fa-restroom"></i>
           Gender and preferred pronoun
         </legend>
@@ -105,14 +98,20 @@
         </div>
 
         <div class="form-control l-center no-padding">
-          <input type="radio" name="pronoun" id="masc" value="masculine">
-          <label for="masc">Masculine</label>
+          <div>
+            <input type="radio" name="pronoun" id="masc" value="masculine">
+            <label for="masc">Masculine</label>
+          </div>
           
-          <input type="radio" name="pronoun" id="fem" value="feminine">
-          <label for="fem">Feminine</label>
+          <div>
+            <input type="radio" name="pronoun" id="fem" value="feminine">
+            <label for="fem">Feminine</label>
+          </div>
 
-          <input type="radio" name="pronoun" id="neutral" value="neutral">
-          <label for="neutral">Neutral</label>
+          <div>
+            <input type="radio" name="pronoun" id="neutral" value="neutral">
+            <label for="neutral">Neutral</label>
+          </div>
         </div>
       </fieldset>
       
@@ -137,8 +136,8 @@
         </div>
       </fieldset>
       <div class="l-center">
-        <button type="button" class="button">Back</button>
         <button type="submit" class="button button-bluepurple">Create account</button>
+        <button type="button" class="button">Back</button>
       </div>
     </form>
   </main>
