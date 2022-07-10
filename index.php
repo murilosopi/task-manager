@@ -116,7 +116,7 @@
       else {
     ?>
       <!-- Form login -->
-      <form action="index.html" method="POST" class="l-form form">
+      <form action="user_controller.php?action=log-in" method="POST" class="l-form form">
         <fieldset class="form-area">
           <legend class="form-legend">
             <i class="fa-solid fa-key"></i>

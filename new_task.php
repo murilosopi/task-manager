@@ -1,3 +1,10 @@
+<?php
+  require_once 'user_controller.php';
+  if(!$_SESSION['auth'] || !isset($_SESSION['auth'])) {
+    header('Location: index.php?error=auth');
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

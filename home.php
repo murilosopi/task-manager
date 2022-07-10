@@ -1,3 +1,12 @@
+<?php
+  require_once 'user_controller.php';
+  if(!$_SESSION['auth'] || !isset($_SESSION['auth'])) {
+    header('Location: index.php?error=auth');
+  }
+
+  $user = $_SESSION['user'];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,7 +37,7 @@
         To do
         <i class="fa-solid fa-clipboard-list"></i>
       </h1>
-      <p class="lead-text">[Name user], here is your personal space, so feel free!</p>
+      <p class="lead-text"><?= $user->username ?>, here is your personal space, so feel free!</p>
       <hr class="lead-hr">
     </header>
     
