@@ -91,18 +91,18 @@
             E-mail and password account
           </legend>
           <div class="form-control">
-            <input type="email" name="email" id="email-c" placeholder="name@exemple.com" class="text-input">
+            <input type="email" name="email" id="email-c" placeholder="name@exemple.com" class="text-input" autocomplete="off">
             <label for="email-c" class="floating-label">Email</label>
           </div>
 
           <div class="form-control">
-            <input type="password" name="passwd" id="passwd-c" placeholder="Type your password" class="text-input">
+            <input type="password" name="passwd" id="passwd-c" placeholder="Type your password" class="text-input" autocomplete="off">
             <label for="passwd-c" class="floating-label">
               Password
             </label>
           </div>
           <div class="form-control no-padding">
-            <input type="password" name="confirm-passwd" id="confirm-passwd-c" placeholder="Confirm your password" class="text-input text-input-placeholder">
+            <input type="password" name="confirm-passwd" id="confirm-passwd-c" placeholder="Confirm your password" class="text-input text-input-placeholder" autocomplete="off">
           </div>
         </fieldset>
         <div class="l-center">
@@ -124,12 +124,12 @@
           </legend>
 
           <div class="form-control">
-            <input type="email" name="email" id="email-l" placeholder="name@exemple.com" class="text-input">
+            <input type="email" name="email" id="email-l" placeholder="name@exemple.com" class="text-input" autocomplete="off">
             <label for="email-l" class="floating-label">Email</label>
           </div>
     
           <div class="form-control">
-            <input type="password" name="passwd" id="passwd-l" placeholder="type your password" class="text-input">
+            <input type="password" name="passwd" id="passwd-l" placeholder="type your password" class="text-input" autocomplete="off">
             <label for="passwd-l" class="floating-label">
               Password
             </label>
