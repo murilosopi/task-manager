@@ -5,4 +5,5 @@
 
   --gradient-light-gray: linear-gradient(13deg, rgba(209,209,209,1) 0%, rgba(213,213,213,1) 35%, rgba(235,235,235,1) 100%);
   --gradient-blue-purple: linear-gradient(164deg, rgba(157,152,255,1) 0%, rgba(171,171,255,1) 35%, rgba(156,178,255,1) 54%, rgba(119,215,237,1) 100%);
+  --gradient-blue-purple-grayed: linear-gradient(164deg, rgba(157,152,255,0.3) 0%, rgba(171,171,255,0.3) 35%, rgba(156,178,255,0.3) 54%, rgba(119,215,237,0.3) 100%);
 }
