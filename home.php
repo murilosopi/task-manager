@@ -24,6 +24,7 @@
   <link rel="stylesheet" href="assets/styles/module/lead.css">
   <link rel="stylesheet" href="assets/styles/module/title.css">
   <link rel="stylesheet" href="assets/styles/module/task.css">
+  <link rel="stylesheet" href="assets/styles/module/icon.css">
   <link rel="stylesheet" href="assets/styles/state/is.css">
   <link rel="stylesheet" href="assets/styles/state/no.css">
 
@@ -48,19 +49,19 @@
           <p class="task-desc">[Description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto mollitia dolores perferendis ea voluptatibus obcaecati]</p>
 
           <div class="l-end">
-            <button class="fa-solid fa-pen-to-square task-control" type="button">
+            <button class="fa-solid fa-pen-to-square icon icon-hover" type="button">
               <div class="is-hidden-sr-except">
                 Edit
               </div>
             </button>
   
-            <button class="fa-solid fa-circle-check task-control" type="button">
+            <button class="fa-solid fa-circle-check icon icon-hover" type="button">
               <div class="is-hidden-sr-except">
                 Done
               </div>
             </button>
             
-            <button class="fa-solid fa-trash task-control" type="button">
+            <button class="fa-solid fa-trash icon icon-hover" type="button">
               <div class="is-hidden-sr-except">
                 Delete
               </div>
@@ -75,19 +76,19 @@
           <p class="task-desc">[Description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto mollitia dolores perferendis ea voluptatibus obcaecati]</p>
 
           <div class="l-end">
-            <button class="fa-solid fa-pen-to-square task-control" type="button">
+            <button class="fa-solid fa-pen-to-square icon icon-hover" type="button">
               <div class="is-hidden-sr-except">
                 Edit
               </div>
             </button>
   
-            <button class="fa-solid fa-circle-check task-control" type="button">
+            <button class="fa-solid fa-circle-check icon icon-hover" type="button">
               <div class="is-hidden-sr-except">
                 Done
               </div>
             </button>
             
-            <button class="fa-solid fa-trash task-control" type="button">
+            <button class="fa-solid fa-trash icon icon-hover" type="button">
               <div class="is-hidden-sr-except">
                 Delete
               </div>
