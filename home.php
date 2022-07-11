@@ -21,25 +21,58 @@
   <link rel="stylesheet" href="assets/styles/layout/l-center.css">
   <link rel="stylesheet" href="assets/styles/layout/l-end.css">
   <link rel="stylesheet" href="assets/styles/layout/l-task.css">
+  <link rel="stylesheet" href="assets/styles/layout/l-nav.css">
   <link rel="stylesheet" href="assets/styles/module/lead.css">
   <link rel="stylesheet" href="assets/styles/module/title.css">
   <link rel="stylesheet" href="assets/styles/module/task.css">
   <link rel="stylesheet" href="assets/styles/module/icon.css">
+  <link rel="stylesheet" href="assets/styles/module/menu.css">
   <link rel="stylesheet" href="assets/styles/state/is.css">
   <link rel="stylesheet" href="assets/styles/state/no.css">
 
   <script src="https://kit.fontawesome.com/fe0f6eac9b.js" crossorigin="anonymous"></script>
-  <script src="assets/js/main.js"></script>
 </head>
 <body class="l-container">
   <main>
-    <header class="lead">
-      <h1 class="lead-title">
-        To do
-        <i class="fa-solid fa-clipboard-list"></i>
-      </h1>
-      <p class="lead-text"><?= $user->username ?>, here is your personal space, so feel free!</p>
-      <hr class="lead-hr">
+    <header>
+      <div class="lead">
+        <h1 class="lead-title">
+          To do
+          <i class="fa-solid fa-clipboard-list"></i>
+        </h1>
+        <p class="lead-text"><?= $user->username ?>, here is your personal space, so feel free!</p>
+        <hr class="lead-hr">
+      </div>
+
+      <nav class="l-nav">
+        <button class="icon nav-toggler">
+          <i class="fa-solid fa-bars-staggered"></i>
+          <span class="is-hidden-sr-except">Menu</span>
+        </button>
+      
+        <ul class="menu is-hidden">
+          <li class="menu-item">
+            <a class="menu-link" href="home.php">
+              <i class="fa-solid fa-chart-simple"></i>
+              Dashboard
+            </a>
+          </li>
+
+          <li class="menu-item">
+            <a class="menu-link" href="home.php">
+              <i class="fa-solid fa-user"></i>
+              My account
+            </a>
+          </li>
+
+          <li class="menu-item">
+            <a class="menu-link" href="user_controller.php?action=log-out">
+              <i class="fa-solid fa-right-from-bracket"></i>
+              Log-out
+            </a>
+          </li>
+        </ul>
+      </nav>
     </header>
     
     <ul class="l-task">
@@ -102,5 +135,6 @@
       <button class="button button-bluepurple" onclick="goNewTask()">New</button>
     </div>
   </main>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
