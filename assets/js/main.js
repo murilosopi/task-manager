@@ -11,7 +11,7 @@ function goHome() {
 }
 
 function goCreateAccount() {
-  location.href = "index.php?action=sign-in";
+  location.href = "index.php?action=sign-up";
 }
 
 function goLogin() {

@@ -30,10 +30,10 @@
     </header>
 
     <?php
-      if(isset($_GET['action']) && $_GET['action'] == 'sign-in') {
+      if(isset($_GET['action']) && $_GET['action'] == 'sign-up') {
     ?>
       <!-- Form create account -->
-      <form action="index.html" method="POST" class="l-form form">
+      <form action="user_controller.php?action=sign-up" method="POST" class="l-form form">
         <fieldset class="form-area">
           <legend class="form-legend">
             <i class="fa-solid fa-id-card"></i>
@@ -60,26 +60,26 @@
             <label for="gender" class="is-hidden">Gender</label>
             <select name="gender" id="gender" class="text-input no-margin">
               <option>-- Select an option --</option>
-              <option value="male">Male</option>
-              <option value="female">Female</option>
-              <option value="non-binary">Non-binary</option>
-              <option value="other">Other</option>
+              <option value="MA">Male</option>
+              <option value="FE">Female</option>
+              <option value="NB">Non-binary</option>
+              <option value="OT">Other</option>
             </select>
           </div>
 
           <div class="form-control l-center no-padding">
             <div>
-              <input type="radio" name="pronoun" id="masc" value="masculine">
+              <input type="radio" name="pronoun" id="masc" value="M">
               <label for="masc">Masculine</label>
             </div>
             
             <div>
-              <input type="radio" name="pronoun" id="fem" value="feminine">
+              <input type="radio" name="pronoun" id="fem" value="F">
               <label for="fem">Feminine</label>
             </div>
 
             <div>
-              <input type="radio" name="pronoun" id="neutral" value="neutral">
+              <input type="radio" name="pronoun" id="neutral" value="N">
               <label for="neutral">Neutral</label>
             </div>
           </div>

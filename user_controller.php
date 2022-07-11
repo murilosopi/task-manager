@@ -20,5 +20,22 @@
     } else {
       header('Location: index.php?error=login');
     }
-  } 
+  } else if($action === 'sign-up') {
+    $name = $_POST['name'];
+    $birthdate = $_POST['birthdate'];
+    $gender = $_POST['gender'];
+    $pronoun = $_POST['pronoun'];
+    $email = $_POST['email'];
+    $passwd = $_POST['passwd'];
+
+    $userModel
+      ->__set('username', $name)
+      ->__set('birthdate', $birthdate)
+      ->__set('gender', $gender)
+      ->__set('pronoun', $pronoun)
+      ->__set('email', $email)
+      ->__set('passwd', $passwd);
+
+    $userService->createAccount($userModel);
+  }
 ?>
