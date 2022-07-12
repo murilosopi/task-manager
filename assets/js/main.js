@@ -28,6 +28,11 @@ function goLogin() {
       e.addEventListener('click', AlertClickHandler);
     });
   }
+
+  const signUpForm = document.getElementById("sign-up-form");
+  if(signUpForm) {
+    signUpForm.addEventListener('submit', submitSignUpHandler);
+  }
 })()
 
 function navToggleHandler() {
@@ -45,4 +50,21 @@ function AlertClickHandler() {
   setTimeout(() => {
     this.remove();
   }, 400);
+}
+
+function submitSignUpHandler(e) {
+  e.preventDefault();
+  const passwd = document.getElementById("passwd-c");
+  const passwdConf = document.getElementById("confirm-passwd-c");
+  if(passwd.value === passwdConf.value) {
+    this.submit();
+  } else {
+    passwd.classList.add('is-wrong');
+    passwdConf.classList.add('is-wrong');
+    
+    const warning = document.createElement('small');
+    warning.className = "input-warning";
+    warning.textContent = "the passwords didn't match";
+    passwdConf.insertAdjacentElement('afterend', warning);
+  }
 }
