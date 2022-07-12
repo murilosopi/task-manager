@@ -39,7 +39,7 @@
     if($userService->createAccount($userModel)){
       header('Location: index.php?success=sign-up');
     } else {
-      header('Location: index.php?error=sign-up');
+      header('Location: index.php?action=sign-up&error=sign-up');
     }
   }
 ?>
