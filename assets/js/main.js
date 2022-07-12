@@ -20,12 +20,14 @@ function goLogin() {
 
 (function addEventListeners() {
   const navToggler = document.querySelector("nav .nav-toggler");
-  navToggler.addEventListener('click', navToggleHandler);
+  if(navToggler) navToggler.addEventListener('click', navToggleHandler);
 
   const alert = document.querySelectorAll(".alert");
-  alert.forEach(e => {
-    e.addEventListener('click', AlertClickHandler);
-  }) 
+  if(alert.length > 0) {
+    alert.forEach(e => {
+      e.addEventListener('click', AlertClickHandler);
+    });
+  }
 })()
 
 function navToggleHandler() {
@@ -39,8 +41,8 @@ function navToggleHandler() {
 }
 
 function AlertClickHandler() {
-  this.classList.add('alert-fadeout')
+  this.classList.add('alert-fadeout');
   setTimeout(() => {
     this.remove();
-  }, 400)
+  }, 400);
 }
