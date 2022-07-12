@@ -42,11 +42,8 @@
       $stmt->bindValue(4, $user->__get('pronoun'));
       $stmt->bindValue(5, $user->__get('email'));
       $stmt->bindValue(6, $user->__get('passwd'));
-      if($stmt->execute()) {
-        header('Location: index.php?success=sign-up');
-      } else {
-        header('Location: index.php?error=sign-up');
-      }
+
+      return $stmt->execute();
     }
   }
 ?>

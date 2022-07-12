@@ -36,6 +36,10 @@
       ->__set('email', $email)
       ->__set('passwd', $passwd);
 
-    $userService->createAccount($userModel);
+    if($userService->createAccount($userModel)){
+      header('Location: index.php?success=sign-up');
+    } else {
+      header('Location: index.php?error=sign-up');
+    }
   }
 ?>
