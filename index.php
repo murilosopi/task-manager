@@ -12,7 +12,10 @@
   <link rel="stylesheet" href="assets/styles/module/lead.css">
   <link rel="stylesheet" href="assets/styles/module/form.css">
   <link rel="stylesheet" href="assets/styles/module/button.css">
+  <link rel="stylesheet" href="assets/styles/module/alert.css">
+  <link rel="stylesheet" href="assets/styles/module/icon.css">
   <link rel="stylesheet" href="assets/styles/layout/l-center.css">
+  <link rel="stylesheet" href="assets/styles/layout/l-alert.css">
   <link rel="stylesheet" href="assets/styles/state/is.css">
   <link rel="stylesheet" href="assets/styles/state/no.css">
 
@@ -20,6 +23,61 @@
 </head>
 <body>
   <main class="l-container">
+
+    <!-- Feedback alerts -->
+    <?php if(isset($_GET['error']) && $_GET['error'] === 'sign-up') { ?>
+
+      <div class="l-alert">
+        <article class="alert alert-error">
+          <p class="alert-text">
+            There is a problem with your information provided, try again.
+            <i class="fa-solid fa-arrow-rotate-left icon"></i>
+          </p>
+        </article>
+      </div>
+
+    <?php } ?>
+
+    <?php if(isset($_GET['error']) && $_GET['error'] === 'login') { ?>
+
+      <div class="l-alert">
+        <article class="alert alert-error">
+          <p class="alert-text">
+            Something went wrong with your login, try again 
+            <i class="fa-solid fa-id-card icon"></i>
+          </p>
+        </article>
+      </div>
+
+    <?php } ?>
+
+    <?php if(isset($_GET['error']) && $_GET['error'] === 'auth') { ?>
+
+      <div class="l-alert">
+        <article class="alert alert-error">
+          <p class="alert-text">
+            Please, authenticate your access.
+            <i class="fa-solid fa-lock icon"></i>
+          </p>
+        </article>
+      </div>
+
+    <?php } ?>
+
+    <?php if(isset($_GET['success']) && $_GET['success'] === 'sign-up') { ?>
+
+      <div class="l-alert">
+        <article class="alert alert-success">
+          <p class="alert-text">
+            Your account was created
+            <i class="fa-solid fa-face-laugh-beam icon"></i>
+          </p>
+        </article>
+      </div>
+
+    <?php } ?>
+
+
     <header class="lead">
       <h1 class="lead-title">
         Sign in
