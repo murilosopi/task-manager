@@ -91,7 +91,7 @@
       if(isset($_GET['action']) && $_GET['action'] == 'sign-up') {
     ?>
       <!-- Form create account -->
-      <form action="user_controller.php?action=sign-up" method="POST" class="l-form form">
+      <form action="user_controller.php?action=sign-up" method="POST" class="l-form form" id="sign-up-form">
         <fieldset class="form-area">
           <legend class="form-legend">
             <i class="fa-solid fa-id-card"></i>
