@@ -21,6 +21,11 @@ function goLogin() {
 (function addEventListeners() {
   const navToggler = document.querySelector("nav .nav-toggler");
   navToggler.addEventListener('click', navToggleHandler);
+
+  const alert = document.querySelectorAll(".alert");
+  alert.forEach(e => {
+    e.addEventListener('click', AlertClickHandler);
+  }) 
 })()
 
 function navToggleHandler() {
@@ -31,4 +36,11 @@ function navToggleHandler() {
   } else {
     navMenu.classList.add("is-hidden");
   }
+}
+
+function AlertClickHandler() {
+  this.classList.add('alert-fadeout')
+  setTimeout(() => {
+    this.remove();
+  }, 400)
 }
