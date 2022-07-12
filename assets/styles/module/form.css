@@ -61,3 +61,23 @@
   top: -0.55rem;
   opacity: 1;
 }
+
+.form .input-warning {
+  padding-left: 1rem;
+  color: var(--color-wrong);
+}
+
+.form .text-input.is-wrong {
+  color: var(--color-wrong);
+  background-color: var(--color-wrong-light);
+  border-color: var(--color-wrong);
+}
+
+.form .text-input.is-wrong:focus {
+  outline-color: var(--color-wrong);
+}
+
+.form .text-input.is-wrong + .floating-label, 
+.form .text-input.text-input-placeholder.is-wrong::placeholder {
+  color: var(--color-wrong);
+}
