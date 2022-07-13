@@ -45,5 +45,16 @@
 
       return $stmt->execute();
     }
+
+    public function validateEmail($user) {
+      
+      $sql = 'SELECT * FROM tb_user WHERE email = :email';
+      $pdo = $this->connection->connect();
+      $stmt = $pdo->prepare($sql);
+      $stmt->bindValue(':email', $user->__get('email'));
+      $stmt->execute();
+      $users = $stmt->fetchAll(PDO::FETCH_OBJ);
+      return $users->count != 0? false : true;
+    }
   }
 ?>
