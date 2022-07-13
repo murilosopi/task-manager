@@ -18,17 +18,45 @@
   <link rel="stylesheet" href="assets/styles/layout/l-container.css">
   <link rel="stylesheet" href="assets/styles/layout/l-center.css">
   <link rel="stylesheet" href="assets/styles/layout/l-form.css">
+  <link rel="stylesheet" href="assets/styles/layout/l-alert.css">
   <link rel="stylesheet" href="assets/styles/module/lead.css">
   <link rel="stylesheet" href="assets/styles/module/form.css">
   <link rel="stylesheet" href="assets/styles/module/button.css">
   <link rel="stylesheet" href="assets/styles/module/icon.css">
   <link rel="stylesheet" href="assets/styles/module/menu.css">
+  <link rel="stylesheet" href="assets/styles/module/alert.css">
   <link rel="stylesheet" href="assets/styles/state/is.css">
 
 
   <script src="https://kit.fontawesome.com/fe0f6eac9b.js" crossorigin="anonymous"></script>
 </head>
 <body class="l-container">
+  <?php if(isset($_GET['error']) && $_GET['error'] === 'task') { ?>
+
+    <div class="l-alert">
+      <article class="alert alert-error">
+        <p class="alert-text">
+          Sorry, something went wrong, try again later...
+          <i class="fa-solid fa-face-frown-open icon"></i>
+        </p>
+      </article>
+    </div>
+
+  <?php } ?>
+
+  <?php if(isset($_GET['success']) && $_GET['success'] === 'task') { ?>
+
+    <div class="l-alert">
+      <article class="alert alert-success icon">
+        <p class="alert-text">
+          Your task was registered
+          <i class="fa-solid fa-check"></i>
+        </p>
+      </article>
+    </div>
+
+  <?php } ?>
+
   <header>
     <div class="lead">
       <h1 class="lead-title">
@@ -71,7 +99,7 @@
   </header>
 
   <main>
-    <form action="index.html" method="POST" class="l-form form">
+    <form action="task_controller.php?action=add" method="POST" class="l-form form">
 
       <div class="form-control">
         <input type="text" name="task" id="task" class="text-input" placeholder="Type the task title">
