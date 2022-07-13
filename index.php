@@ -90,6 +90,19 @@
 
     <?php } ?>
 
+    <?php if(isset($_GET['success']) && $_GET['success'] === 'log-out') { ?>
+
+      <div class="l-alert">
+        <article class="alert alert-success">
+          <p class="alert-text">
+            You have successfully logged out of your account.
+            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+          </p>
+        </article>
+      </div>
+
+    <?php } ?>
+
 
     <header class="lead">
       <h1 class="lead-title">
