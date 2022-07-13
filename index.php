@@ -38,6 +38,19 @@
 
     <?php } ?>
 
+    <?php if(isset($_GET['error']) && $_GET['error'] === 'sign-up-email') { ?>
+
+      <div class="l-alert">
+        <article class="alert alert-error">
+          <p class="alert-text">
+            Sorry, another user is associated with this same email.
+            <i class="fa-solid fa-at icon"></i>
+          </p>
+        </article>
+      </div>
+
+    <?php } ?>
+
     <?php if(isset($_GET['error']) && $_GET['error'] === 'login') { ?>
 
       <div class="l-alert">
