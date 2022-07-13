@@ -18,9 +18,12 @@
       $_SESSION['user'] = $user;
       header('Location: home.php');
     } else {
+      session_destroy();
       header('Location: index.php?error=login');
     }
-  } else if($action === 'sign-up') {
+  }
+  
+  if($action === 'sign-up') {
     $name = $_POST['name'];
     $birthdate = $_POST['birthdate'];
     $gender = $_POST['gender'];
@@ -45,5 +48,10 @@
     } else {
       header('Location: index.php?action=sign-up&error=sign-up-email');
     }
+  }
+  
+  if($action === 'log-out') {
+    session_destroy();
+    header('Location: index.php?success=log-out');
   }
 ?>
