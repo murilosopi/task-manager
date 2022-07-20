@@ -30,28 +30,32 @@
     $pronoun = $_POST['pronoun'];
     $email = $_POST['email'];
     $passwd = $_POST['passwd'];
-
-    $userModel
+    
+    if(trim($name) && trim($birthdate) && trim($gender) && trim($pronoun) && trim($email) && $passwd) {
+      $userModel
       ->__set('username', $name)
       ->__set('birthdate', $birthdate)
       ->__set('gender', $gender)
       ->__set('pronoun', $pronoun)
       ->__set('email', $email)
       ->__set('passwd', $passwd);
-
-    if($userService->validateEmail($userModel)){
-      if($userService->createAccount($userModel)){
-        header('Location: index.php?success=sign-up');
-      } else {
-        header('Location: index.php?action=sign-up&error=sign-up');
-      }
-    } else {
-      header('Location: index.php?action=sign-up&error=sign-up-email');
-    }
+      
+      if($userService->validateEmail($userModel)){
+        if($userService->createAccount($userModel)) header('Location: index.php?success=sign-up');
+        else header('Location: index.php?action=sign-up&error=generic');
+      } 
+      else header('Location: index.php?action=sign-up&error=sign-up-email');
+    } 
+    else header('Location: index.php?action=sign-up&error=sign-up');
   }
   
   if($action === 'log-out') {
     session_destroy();
     header('Location: index.php?success=log-out');
+  }
+
+  if(!$_SESSION['auth'] || !isset($_SESSION['auth'])) {
+    session_destroy();
+    header('Location: index.php?error=auth');
   }
 ?>
