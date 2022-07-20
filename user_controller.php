@@ -5,7 +5,7 @@
   $userService = new UserService();
   $userModel = new User();
   
-  $action = isset($_GET['action']) ? $_GET['action'] : 'none';
+  $action = isset($_GET['action']) ? $_GET['action'] : null;
 
   if($action === 'log-in') {
     $email = $_POST['email'];
@@ -54,7 +54,7 @@
     header('Location: index.php?success=log-out');
   }
 
-  if(!$_SESSION['auth'] || !isset($_SESSION['auth'])) {
+  if($action !== 'sign-up' && (!$_SESSION['auth'] || !isset($_SESSION['auth']))) {
     session_destroy();
     header('Location: index.php?error=auth');
   }
