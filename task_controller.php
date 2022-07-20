@@ -38,5 +38,12 @@
     if($taskService->markAsDone($taskModel)) header("Location: {$_GET['pag']}?success=done");
     else header("Location: {$_GET['pag']}?error=generic");
   }
+
+  if($action === 'delete') {
+    $taskModel->__set('id_user', $user->id);
+    $taskModel->__set('id', $_GET['id']);
+    if($taskService->deleteTask($taskModel)) header("Location: {$_GET['pag']}?success=delete");
+    else header("Location: {$_GET['pag']}?error=generic");
+  }
   
 ?>
