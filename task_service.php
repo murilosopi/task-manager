@@ -48,5 +48,15 @@
 
       return $stmt->execute();
     }
+
+    public function deleteTask($task) {
+      $sql = 'DELETE FROM tb_task WHERE id = :id AND id_user = :id_user';
+      $pdo = $this->connection->connect();
+      $stmt = $pdo->prepare($sql);
+      $stmt->bindValue(':id', $task->__get('id'));
+      $stmt->bindValue(':id_user', $task->__get('id_user'));
+
+      return $stmt->execute();
+    }
   }
 ?>
