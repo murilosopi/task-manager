@@ -93,3 +93,7 @@ function generateWarningForm(element, message = "") {
     element.parentNode.insertAdjacentElement("beforeend", warning);
   }
 }
+
+function markAsDone(id, pag) {
+  location.href=`task_controller.php?action=mark-done&id=${id}&pag=${pag}.php`;
+}
