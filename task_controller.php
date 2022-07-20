@@ -31,5 +31,12 @@
     $taskModel->__set('id_user', $user->id);
     $allTasks = $taskService->listAll($taskModel);
   }
+
+  if($action === 'mark-done') {
+    $taskModel->__set('id_user', $user->id);
+    $taskModel->__set('id', $_GET['id']);
+    if($taskService->markAsDone($taskModel)) header("Location: {$_GET['pag']}?success=done");
+    else header("Location: {$_GET['pag']}?error=generic");
+  }
   
 ?>
