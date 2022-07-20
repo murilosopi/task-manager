@@ -144,7 +144,7 @@
                 </button>
               <?php } ?>
 
-              <button class="fa-solid fa-trash icon icon-hover" type="button">
+              <button class="fa-solid fa-trash icon icon-hover" type="button" onclick="deleteTask(<?= $task->id ?>, 'all_tasks')">
                 <div class="is-hidden-sr-except">
                   Delete
                 </div>

@@ -97,3 +97,7 @@ function generateWarningForm(element, message = "") {
 function markAsDone(id, pag) {
   location.href=`task_controller.php?action=mark-done&id=${id}&pag=${pag}.php`;
 }
+
+function deleteTask(id, pag) {
+  location.href=`task_controller.php?action=delete&id=${id}&pag=${pag}.php`;
+}
