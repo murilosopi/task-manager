@@ -59,12 +59,18 @@ function submitSignUpHandler(e) {
   if(passwd.value === passwdConf.value) {
     this.submit();
   } else {
-    passwd.classList.add('is-wrong');
-    passwdConf.classList.add('is-wrong');
-    
+    generateWarningForm(passwd, "the passwords didn't match");
+    generateWarningForm(passwdConf);
+  }
+}
+
+function generateWarningForm(element, message = "") {
+  element.classList.add("is-wrong");
+  if(message) {
     const warning = document.createElement('small');
     warning.className = "input-warning";
-    warning.textContent = "the passwords didn't match";
-    passwdConf.insertAdjacentElement('afterend', warning);
+    warning.textContent = message;
+    warning.classList.add("is-wrong");
+    element.parentNode.insertAdjacentElement("beforeend", warning);
   }
 }
