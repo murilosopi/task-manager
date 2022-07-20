@@ -21,11 +21,13 @@
   <link rel="stylesheet" href="assets/styles/layout/l-end.css">
   <link rel="stylesheet" href="assets/styles/layout/l-task.css">
   <link rel="stylesheet" href="assets/styles/layout/l-nav.css">
+  <link rel="stylesheet" href="assets/styles/layout/l-alert.css">
   <link rel="stylesheet" href="assets/styles/module/lead.css">
   <link rel="stylesheet" href="assets/styles/module/title.css">
   <link rel="stylesheet" href="assets/styles/module/task.css">
   <link rel="stylesheet" href="assets/styles/module/icon.css">
   <link rel="stylesheet" href="assets/styles/module/menu.css">
+  <link rel="stylesheet" href="assets/styles/module/alert.css">
   <link rel="stylesheet" href="assets/styles/state/is.css">
   <link rel="stylesheet" href="assets/styles/state/no.css">
 
@@ -33,6 +35,35 @@
 </head>
 <body class="l-container">
   <main>
+
+    <!-- Feedback alerts -->
+    <?php if(isset($_GET['success']) && $_GET['success'] === 'done') { ?>
+
+      <div class="l-alert">
+        <article class="alert alert-success">
+          <p class="alert-text">
+            Congratulations, you just carried out one of your tasks!
+            <i class="fa-solid fa-fire"></i>
+          </p>
+        </article>
+      </div>
+
+    <?php } ?>
+
+    <?php if(isset($_GET['error']) && $_GET['error'] === 'generic') { ?>
+
+      <div class="l-alert">
+        <article class="alert alert-error">
+          <p class="alert-text">
+            Sorry, something went wrong, try again later...
+            <i class="fa-solid fa-face-frown-open icon"></i>
+          </p>
+        </article>
+      </div>
+
+    <?php } ?>
+
+
     <header>
       <div class="lead">
         <h1 class="lead-title">
@@ -79,7 +110,9 @@
         <li>
           <article class="task">
             <h3 class="task-title"><?= $task->task ?></h3>
-            <p class="task-desc"><?= $task->task_description ?></p>
+            <?php if ($task->task_description) { ?>
+              <p class="task-desc"><?= $task->task_description ?></p>
+            <?php } ?>
 
             <div class="l-end">
               <button class="fa-solid fa-pen-to-square icon icon-hover" type="button">
@@ -88,7 +121,7 @@
                 </div>
               </button>
     
-              <button class="fa-solid fa-circle-check icon icon-hover" type="button">
+              <button class="fa-solid fa-circle-check icon icon-hover" type="button" onclick="markAsDone(<?= $task->id ?>, 'home')">
                 <div class="is-hidden-sr-except">
                   Done
                 </div>
