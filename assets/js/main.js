@@ -33,6 +33,11 @@ function goLogin() {
   if(signUpForm) {
     signUpForm.addEventListener('submit', submitSignUpHandler);
   }
+
+  const newTaskForm = document.getElementById("new-task-form");
+  if(newTaskForm) {
+    newTaskForm.addEventListener('submit', submitNewTaskHandler);
+  }
 })()
 
 function navToggleHandler() {
@@ -61,6 +66,18 @@ function submitSignUpHandler(e) {
   } else {
     generateWarningForm(passwd, "the passwords didn't match");
     generateWarningForm(passwdConf);
+  }
+}
+
+function submitNewTaskHandler(e) {
+  e.preventDefault();
+  const task = document.getElementById("task");
+  const taskText = task.value.trim();
+
+  if(!taskText) {
+    generateWarningForm(task, "you must specify your task!")
+  } else {
+    this.submit();
   }
 }
 
