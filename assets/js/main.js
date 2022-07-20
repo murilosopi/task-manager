@@ -83,7 +83,9 @@ function submitNewTaskHandler(e) {
 
 function generateWarningForm(element, message = "") {
   element.classList.add("is-wrong");
-  if(message) {
+  
+  const existsWarning = element.parentNode.querySelector('.input-warning');
+  if(!existsWarning && message) {
     const warning = document.createElement('small');
     warning.className = "input-warning";
     warning.textContent = message;
