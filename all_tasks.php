@@ -45,7 +45,20 @@
         <article class="alert alert-success">
           <p class="alert-text">
             Congratulations, you just carried out one of your tasks!
-            <i class="fa-solid fa-fire"></i>
+            <i class="fa-solid fa-fire icon"></i>
+          </p>
+        </article>
+      </div>
+
+    <?php } ?>
+
+    <?php if(isset($_GET['success']) && $_GET['success'] === 'delete') { ?>
+
+      <div class="l-alert">
+        <article class="alert alert-success">
+          <p class="alert-text">
+            Your task was deleted successfully!
+            <i class="fa-solid fa-delete-left icon"></i>
           </p>
         </article>
       </div>

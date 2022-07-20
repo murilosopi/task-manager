@@ -50,6 +50,19 @@
 
     <?php } ?>
 
+    <?php if(isset($_GET['success']) && $_GET['success'] === 'delete') { ?>
+
+      <div class="l-alert">
+        <article class="alert alert-success">
+          <p class="alert-text">
+            Your task was deleted successfully!
+            <i class="fa-solid fa-delete-left icon"></i>
+          </p>
+        </article>
+      </div>
+
+    <?php } ?>
+
     <?php if(isset($_GET['error']) && $_GET['error'] === 'generic') { ?>
 
       <div class="l-alert">
@@ -111,7 +124,9 @@
           <article class="task">
             <h3 class="task-title"><?= $task->task ?></h3>
             <?php if ($task->task_description) { ?>
-              <p class="task-desc"><?= $task->task_description ?></p>
+              <p class="task-desc">
+                <?= str_replace("\n", '<br>', $task->task_description) ?>
+              </p>
             <?php } ?>
 
             <div class="l-end">
@@ -127,7 +142,7 @@
                 </div>
               </button>
               
-              <button class="fa-solid fa-trash icon icon-hover" type="button">
+              <button class="fa-solid fa-trash icon icon-hover" type="button" onclick="deleteTask(<?= $task->id ?>, 'all_tasks')">
                 <div class="is-hidden-sr-except">
                   Delete
                 </div>
