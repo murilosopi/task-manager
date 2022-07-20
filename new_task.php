@@ -1,8 +1,5 @@
 <?php
   require_once 'user_controller.php';
-  if(!$_SESSION['auth'] || !isset($_SESSION['auth'])) {
-    header('Location: index.php?error=auth');
-  }
 ?>
 
 <!DOCTYPE html>
@@ -47,10 +44,10 @@
   <?php if(isset($_GET['success']) && $_GET['success'] === 'task') { ?>
 
     <div class="l-alert">
-      <article class="alert alert-success icon">
+      <article class="alert alert-success ">
         <p class="alert-text">
           Your task was registered
-          <i class="fa-solid fa-check"></i>
+          <i class="fa-solid fa-check icon"></i>
         </p>
       </article>
     </div>
@@ -99,7 +96,7 @@
   </header>
 
   <main>
-    <form action="task_controller.php?action=add" method="POST" class="l-form form">
+    <form id="new-task-form" action="task_controller.php?action=add" method="POST" class="l-form form">
 
       <div class="form-control">
         <input type="text" name="task" id="task" class="text-input" placeholder="Type the task title">
@@ -108,7 +105,7 @@
 
       <div class="form-control">
         <textarea name="description" id="description" class="text-input" placeholder="Descreva sua task" rows="10"></textarea>
-        <label for="description" class="floating-label">Description</label>
+        <label for="description" class="floating-label">Description <small>(optional)</small></label>
       </div>
 
       <div class="l-center">
