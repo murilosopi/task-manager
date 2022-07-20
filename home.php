@@ -1,9 +1,8 @@
 <?php
   require_once 'user_controller.php';
-  if(!$_SESSION['auth'] || !isset($_SESSION['auth'])) {
-    header('Location: index.php?error=auth');
-  }
 
+  $action = 'list-todo';
+  require_once 'task_controller.php';
   $user = $_SESSION['user'];
 ?>
 
@@ -76,59 +75,34 @@
     </header>
     
     <ul class="l-task">
-      <li>
-        <article class="task">
-          <h3 class="task-title">[Title]</h3>
-          <p class="task-desc">[Description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto mollitia dolores perferendis ea voluptatibus obcaecati]</p>
+      <?php foreach($toDoTasks as $task) { ?>
+        <li>
+          <article class="task">
+            <h3 class="task-title"><?= $task->task ?></h3>
+            <p class="task-desc"><?= $task->task_description ?></p>
 
-          <div class="l-end">
-            <button class="fa-solid fa-pen-to-square icon icon-hover" type="button">
-              <div class="is-hidden-sr-except">
-                Edit
-              </div>
-            </button>
-  
-            <button class="fa-solid fa-circle-check icon icon-hover" type="button">
-              <div class="is-hidden-sr-except">
-                Done
-              </div>
-            </button>
-            
-            <button class="fa-solid fa-trash icon icon-hover" type="button">
-              <div class="is-hidden-sr-except">
-                Delete
-              </div>
-            </button>
-          </div>
-        </article>
-      </li>
-
-      <li>
-        <article class="task">
-          <h3 class="task-title">[Title]</h3>
-          <p class="task-desc">[Description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto mollitia dolores perferendis ea voluptatibus obcaecati]</p>
-
-          <div class="l-end">
-            <button class="fa-solid fa-pen-to-square icon icon-hover" type="button">
-              <div class="is-hidden-sr-except">
-                Edit
-              </div>
-            </button>
-  
-            <button class="fa-solid fa-circle-check icon icon-hover" type="button">
-              <div class="is-hidden-sr-except">
-                Done
-              </div>
-            </button>
-            
-            <button class="fa-solid fa-trash icon icon-hover" type="button">
-              <div class="is-hidden-sr-except">
-                Delete
-              </div>
-            </button>
-          </div>
-        </article>
-      </li>
+            <div class="l-end">
+              <button class="fa-solid fa-pen-to-square icon icon-hover" type="button">
+                <div class="is-hidden-sr-except">
+                  Edit
+                </div>
+              </button>
+    
+              <button class="fa-solid fa-circle-check icon icon-hover" type="button">
+                <div class="is-hidden-sr-except">
+                  Done
+                </div>
+              </button>
+              
+              <button class="fa-solid fa-trash icon icon-hover" type="button">
+                <div class="is-hidden-sr-except">
+                  Delete
+                </div>
+              </button>
+            </div>
+          </article>
+        </li>
+      <?php } ?>
     </ul>
     <div class="l-center">
       <button class="button" onclick="goAllTasks()">Show all</button>

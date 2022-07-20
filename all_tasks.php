@@ -3,6 +3,9 @@
   if(!$_SESSION['auth'] || !isset($_SESSION['auth'])) {
     header('Location: index.php?error=auth');
   }
+  
+  $action = 'list-all';
+  require_once 'task_controller.php';
 ?>
 
 <!DOCTYPE html>
@@ -74,67 +77,48 @@
   </header>
   <main>
     <ul class="l-task">
-      <li>
-        <article class="task">
-          <h2 class="task-title">[Title]</h2>
-          <h3 class="task-status">
-            done
-            <i class="fa-solid fa-check-double"></i>
-          </h3>
-          <p class="task-desc">[Description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto mollitia dolores perferendis ea voluptatibus obcaecati]</p>
+      <?php foreach($allTasks as $task) { ?>
+        <li>
+          <article class="task">
+            <h2 class="task-title"><?= $task->task ?></h2>
 
-          <div class="l-end">
-            <button class="fa-solid fa-pen-to-square icon icon-hover" type="button">
-              <div class="is-hidden-sr-except">
-                Edit
-              </div>
-            </button>
-  
-            <button class="fa-solid fa-circle-check icon icon-hover" type="button">
-              <div class="is-hidden-sr-except">
-                Done
-              </div>
-            </button>
-            
-            <button class="fa-solid fa-trash icon icon-hover" type="button">
-              <div class="is-hidden-sr-except">
-                Delete
-              </div>
-            </button>
-          </div>
-        </article>
-      </li>
+            <?php if($task->done) { ?>
+              <h3 class="task-status">
+                done
+                <i class="fa-solid fa-check-double"></i>
+              </h3>
+            <?php } else { ?>
+              <h3 class="task-status">
+              in progress
+              <i class="fa-solid fa-spinner"></i>
+            </h3>
+            <?php } ?>
 
-      <li>
-        <article class="task task-done">
-          <h2 class="task-title">[Title]</h2>
-          <h3 class="task-status">
-            in progress
-            <i class="fa-solid fa-spinner"></i>
-          </h3>
-          <p class="task-desc">[Description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto mollitia dolores perferendis ea voluptatibus obcaecati]</p>
 
-          <div class="l-end">
-            <button class="fa-solid fa-pen-to-square icon icon-hover" type="button">
-              <div class="is-hidden-sr-except">
-                Edit
-              </div>
-            </button>
-  
-            <button class="fa-solid fa-circle-check icon icon-hover" type="button">
-              <div class="is-hidden-sr-except">
-                Done
-              </div>
-            </button>
-            
-            <button class="fa-solid fa-trash icon icon-hover" type="button">
-              <div class="is-hidden-sr-except">
-                Delete
-              </div>
-            </button>
-          </div>
-        </article>
-      </li>
+            <p class="task-desc"><?= $task->task_description ?></p>
+
+            <div class="l-end">
+              <button class="fa-solid fa-pen-to-square icon icon-hover" type="button">
+                <div class="is-hidden-sr-except">
+                  Edit
+                </div>
+              </button>
+    
+              <button class="fa-solid fa-circle-check icon icon-hover" type="button">
+                <div class="is-hidden-sr-except">
+                  Done
+                </div>
+              </button>
+              
+              <button class="fa-solid fa-trash icon icon-hover" type="button">
+                <div class="is-hidden-sr-except">
+                  Delete
+                </div>
+              </button>
+            </div>
+          </article>
+        </li>
+      <?php } ?>
     </ul>
     <div class="l-center">
       <button class="button" onclick="goHome()">Back</button>
