@@ -38,5 +38,15 @@
       
       return $stmt->fetchAll(PDO::FETCH_OBJ);
     }
+
+    public function markAsDone($task) {
+      $sql = 'UPDATE tb_task SET done = 1 WHERE id = :id AND id_user = :id_user;';
+      $pdo = $this->connection->connect();
+      $stmt = $pdo->prepare($sql);
+      $stmt->bindValue(':id', $task->__get('id'));
+      $stmt->bindValue(':id_user', $task->__get('id_user'));
+
+      return $stmt->execute();
+    }
   }
 ?>
