@@ -195,10 +195,7 @@
         </div>
       </form>
 
-    <?php
-      }
-      else {
-    ?>
+    <?php } else { ?>
       <!-- Form login -->
       <form action="user_controller.php?action=log-in" method="POST" class="l-form form">
         <fieldset class="form-area">
@@ -217,10 +214,6 @@
             <label for="passwd-l" class="floating-label">
               Password
             </label>
-          </div>
-          <div class="l-center">
-            <input type="checkbox" name="keep_log" id="keep-log">
-            <label for="keep-log">Keep me logged</label>
           </div>
         </fieldset>
 
