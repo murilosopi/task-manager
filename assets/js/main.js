@@ -18,17 +18,37 @@
   if(newTaskForm) {
     newTaskForm.addEventListener('submit', submitNewTaskHandler);
   }
+
+  const menuLinks = document.querySelectorAll('.menu a.menu-link');
+  menuLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      getUserPath()
+    })
+  });
 })()
 
+function getUserPath() {
+  const prevPage = localStorage.getItem('previous-page');
+
+  if(prevPage !== location.href){
+    localStorage.setItem('previous-page', location);
+  } else {
+    localStorage.setItem('previous-page', `${location.origin}/task-manager/home.php`);
+  }
+}
+
 function goAllTasks() {
+  getUserPath();
   location.href = "all_tasks.php";
 }
 
 function goNewTask() {
+  getUserPath();
   location.href = "new_task.php";
 }
 
 function goHome() {
+  getUserPath();
   location.href = "home.php";
 }
 
@@ -38,6 +58,12 @@ function goCreateAccount() {
 
 function goLogin() {
   location.href = "index.php";
+}
+
+function goBack() {
+  const prevPage = localStorage.getItem('previous-page');
+  location.href = prevPage ? prevPage : 'home.php' ;
+  getUserPath();
 }
 
 function navToggleHandler() {
