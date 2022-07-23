@@ -22,8 +22,15 @@
   const menuLinks = document.querySelectorAll('.menu a.menu-link');
   menuLinks.forEach(link => {
     link.addEventListener('click', () => {
-      getUserPath()
-    })
+      getUserPath();
+    });
+
+    const logOutPath = `${location.origin}/task-manager/user_controller.php?action=log-out`;
+    if(link.href == logOutPath){
+      link.addEventListener('click', () => {
+        localStorage.removeItem('previous-page');
+      });
+    }
   });
 })()
 
@@ -62,7 +69,7 @@ function goLogin() {
 
 function goBack() {
   const prevPage = localStorage.getItem('previous-page');
-  location.href = prevPage ? prevPage : 'home.php' ;
+  location.href = prevPage !== location.href && prevPage ? prevPage : 'home.php' ;
   getUserPath();
 }
 
