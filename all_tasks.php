@@ -47,7 +47,7 @@
     <?php if(isset($_GET['success']) && $_GET['success'] === 'done') { ?>
 
       <div class="l-alert">
-        <article class="alert alert-success">
+        <article class="alert alert-success shake">
           <p class="alert-text">
             Congratulations, you just carried out one of your tasks!
             <i class="fa-solid fa-fire icon"></i>
@@ -60,7 +60,7 @@
     <?php if(isset($_GET['success']) && $_GET['success'] === 'delete') { ?>
 
       <div class="l-alert">
-        <article class="alert alert-success">
+        <article class="alert alert-success shake">
           <p class="alert-text">
             Your task was deleted successfully!
             <i class="fa-solid fa-delete-left icon"></i>
@@ -74,7 +74,7 @@
     <?php if(isset($_GET['success']) && $_GET['success'] === 'update') { ?>
 
       <div class="l-alert">
-        <article class="alert alert-success">
+        <article class="alert alert-success shake">
           <p class="alert-text">
             Your task was updated successfully!
             <i class="fa-solid fa-pencil icon"></i>

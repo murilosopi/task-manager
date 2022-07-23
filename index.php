@@ -81,7 +81,7 @@
     <?php if(isset($_GET['success']) && $_GET['success'] === 'sign-up') { ?>
 
       <div class="l-alert">
-        <article class="alert alert-success">
+        <article class="alert alert-success shake">
           <p class="alert-text">
             Your account was created
             <i class="fa-solid fa-face-laugh-beam icon"></i>
@@ -94,7 +94,7 @@
     <?php if(isset($_GET['success']) && $_GET['success'] === 'log-out') { ?>
 
       <div class="l-alert">
-        <article class="alert alert-success">
+        <article class="alert alert-success shake">
           <p class="alert-text">
             You have successfully logged out of your account.
             <i class="fa-solid fa-arrow-right-from-bracket"></i>

@@ -45,7 +45,7 @@
   <?php if(isset($_GET['success']) && $_GET['success'] === 'task') { ?>
 
     <div class="l-alert">
-      <article class="alert alert-success ">
+      <article class="alert alert-success shake ">
         <p class="alert-text">
           Your task was registered
           <i class="fa-solid fa-check icon"></i>
