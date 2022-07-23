@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="assets/styles/base/colors.css">
   <link rel="stylesheet" href="assets/styles/layout/l-container.css">
   <link rel="stylesheet" href="assets/styles/layout/l-form.css">
+  <link rel="stylesheet" href="assets/styles/module/animation.css">
   <link rel="stylesheet" href="assets/styles/module/lead.css">
   <link rel="stylesheet" href="assets/styles/module/form.css">
   <link rel="stylesheet" href="assets/styles/module/button.css">

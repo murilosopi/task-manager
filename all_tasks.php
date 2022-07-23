@@ -26,6 +26,7 @@
   <link rel="stylesheet" href="assets/styles/layout/l-alert.css">
   <link rel="stylesheet" href="assets/styles/layout/l-form.css">
   <link rel="stylesheet" href="assets/styles/layout/l-modal.css">
+  <link rel="stylesheet" href="assets/styles/module/animation.css">
   <link rel="stylesheet" href="assets/styles/module/lead.css">
   <link rel="stylesheet" href="assets/styles/module/title.css">
   <link rel="stylesheet" href="assets/styles/module/task.css">

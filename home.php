@@ -24,6 +24,7 @@
   <link rel="stylesheet" href="assets/styles/layout/l-alert.css">
   <link rel="stylesheet" href="assets/styles/layout/l-form.css">
   <link rel="stylesheet" href="assets/styles/layout/l-modal.css">
+  <link rel="stylesheet" href="assets/styles/module/animation.css">
   <link rel="stylesheet" href="assets/styles/module/lead.css">
   <link rel="stylesheet" href="assets/styles/module/title.css">
   <link rel="stylesheet" href="assets/styles/module/task.css">
@@ -83,7 +84,7 @@
     <?php if(isset($_GET['error']) && $_GET['error'] === 'generic') { ?>
 
       <div class="l-alert">
-        <article class="alert alert-error">
+        <article class="alert alert-error shake">
           <p class="alert-text">
             Sorry, something went wrong, try again later...
             <i class="fa-solid fa-face-frown-open icon"></i>
