@@ -46,4 +46,14 @@
     else header("Location: {$_GET['pag']}?error=generic");
   }
   
+  if($action === 'update') {
+    $taskModel
+      ->__set('id_user', $user->id)
+      ->__set('task', $_POST['task'])
+      ->__set('description', $_POST['description'])
+      ->__set('id', $_POST['id']);
+    
+    if($taskService->updateTask($taskModel)) header("Location: {$_GET['pag']}?success=update");
+    else header("Location: {$_GET['pag']}?error=generic");
+  }
 ?>
