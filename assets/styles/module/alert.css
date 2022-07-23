@@ -15,10 +15,6 @@
   font-style: italic;
 }
 
-.alert.alert-error, .alert.alert-success {
-  animation: shake ease-out .2s 2 alternate-reverse;
-}
-
 .alert.alert-error {
   background-color: var(--color-light-gray);
   background-image: var(--gradient-light-gray);
@@ -26,9 +22,4 @@
 
 .alert.alert-success {
   background-image: var(--gradient-blue-purple);
-}
-
-.alert.alert-fadeout {
-  animation: fade-out 400ms;
-  opacity: 0;
 }

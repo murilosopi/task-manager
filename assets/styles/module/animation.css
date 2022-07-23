@@ -1,3 +1,15 @@
+.fadeout {
+  animation: fade-out 400ms;
+}
+
+.fadein {
+  animation: fade-out 150ms reverse;
+}
+
+.shake {
+  animation: shake ease-out .2s 2 alternate-reverse;
+}
+
 @keyframes shake {
     0% {
       transform: translateX(15px);

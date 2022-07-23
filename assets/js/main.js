@@ -1,23 +1,3 @@
-function goAllTasks() {
-  location.href = "all_tasks.php";
-}
-
-function goNewTask() {
-  location.href = "new_task.php";
-}
-
-function goHome() {
-  location.href = "home.php";
-}
-
-function goCreateAccount() {
-  location.href = "index.php?action=sign-up";
-}
-
-function goLogin() {
-  location.href = "index.php";
-}
-
 (function addEventListeners() {
   const navToggler = document.querySelector("nav .nav-toggler");
   if(navToggler) navToggler.addEventListener('click', navToggleHandler);
@@ -40,6 +20,26 @@ function goLogin() {
   }
 })()
 
+function goAllTasks() {
+  location.href = "all_tasks.php";
+}
+
+function goNewTask() {
+  location.href = "new_task.php";
+}
+
+function goHome() {
+  location.href = "home.php";
+}
+
+function goCreateAccount() {
+  location.href = "index.php?action=sign-up";
+}
+
+function goLogin() {
+  location.href = "index.php";
+}
+
 function navToggleHandler() {
   const nav = this.parentNode;
   const navMenu = nav.querySelector(".menu");
@@ -51,7 +51,8 @@ function navToggleHandler() {
 }
 
 function AlertClickHandler() {
-  this.classList.add('alert-fadeout');
+  this.classList.remove('shake');
+  this.classList.add('fadeout');
   setTimeout(() => {
     this.remove();
   }, 400);
@@ -104,6 +105,7 @@ function deleteTask(id, pag) {
 
 function showModalUpdate(id) {
   const modalWrapper = document.getElementById('modal-update');
+  modalWrapper.classList.add('fadein');
 
   const taskElement = document.getElementById(`task-${id}`);
   const inputId = modalWrapper.querySelector('#id');
@@ -120,7 +122,7 @@ function showModalUpdate(id) {
   modalWrapper.classList.remove('is-hidden');
   inputTask.focus();
   modalWrapper.addEventListener('click', e => {
-    if(e.target == modalWrapper) modalWrapper.classList.add('is-hidden');
+    if(e.target == modalWrapper) hideModalUpdate();
   })
   document.body.style.overflow = 'hidden';
   scrollTo(0, 0);
