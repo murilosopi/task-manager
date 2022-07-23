@@ -101,3 +101,33 @@ function markAsDone(id, pag) {
 function deleteTask(id, pag) {
   location.href=`task_controller.php?action=delete&id=${id}&pag=${pag}.php`;
 }
+
+function showModalUpdate(id) {
+  const modalWrapper = document.getElementById('modal-update');
+
+  const taskElement = document.getElementById(`task-${id}`);
+  const inputId = modalWrapper.querySelector('#id');
+  inputId.value = id;
+  
+  const inputTask = modalWrapper.querySelector('#task');
+  const oldTask = taskElement.querySelector('.task-title');
+  inputTask.value = oldTask.textContent.trim();
+  
+  const inputDescription = modalWrapper.querySelector('#description');
+  const oldDescription = taskElement.querySelector('.task-desc');
+  if(oldDescription) inputDescription.value = oldDescription.textContent.trim();
+
+  modalWrapper.classList.remove('is-hidden');
+  inputTask.focus();
+  modalWrapper.addEventListener('click', e => {
+    if(e.target == modalWrapper) modalWrapper.classList.add('is-hidden');
+  })
+  document.body.style.overflow = 'hidden';
+  scrollTo(0, 0);
+}
+
+function hideModalUpdate() {
+  const modal = document.getElementById('modal-update');
+  modal.classList.add('is-hidden');
+  document.body.style.overflow = 'inherit';
+}
