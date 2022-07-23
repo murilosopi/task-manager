@@ -58,5 +58,20 @@
 
       return $stmt->execute();
     }
+
+    public function updateTask($task) {
+      $sql = '
+        UPDATE tb_task SET task = ?, task_description = ?
+        WHERE id_user = ? AND id = ?
+      ';
+      $pdo = $this->connection->connect();
+      $stmt = $pdo->prepare($sql);
+      $stmt->bindValue(1, $task->__get('task'));
+      $stmt->bindValue(2, $task->__get('description'));
+      $stmt->bindValue(3, $task->__get('id_user'));
+      $stmt->bindValue(4, $task->__get('id'));
+
+      return $stmt->execute();
+    }
   }
 ?>
