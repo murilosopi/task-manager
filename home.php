@@ -22,12 +22,16 @@
   <link rel="stylesheet" href="assets/styles/layout/l-task.css">
   <link rel="stylesheet" href="assets/styles/layout/l-nav.css">
   <link rel="stylesheet" href="assets/styles/layout/l-alert.css">
+  <link rel="stylesheet" href="assets/styles/layout/l-form.css">
+  <link rel="stylesheet" href="assets/styles/layout/l-modal.css">
   <link rel="stylesheet" href="assets/styles/module/lead.css">
   <link rel="stylesheet" href="assets/styles/module/title.css">
   <link rel="stylesheet" href="assets/styles/module/task.css">
   <link rel="stylesheet" href="assets/styles/module/icon.css">
   <link rel="stylesheet" href="assets/styles/module/menu.css">
   <link rel="stylesheet" href="assets/styles/module/alert.css">
+  <link rel="stylesheet" href="assets/styles/module/modal.css">
+  <link rel="stylesheet" href="assets/styles/module/form.css">
   <link rel="stylesheet" href="assets/styles/state/is.css">
   <link rel="stylesheet" href="assets/styles/state/no.css">
 
@@ -57,6 +61,19 @@
           <p class="alert-text">
             Your task was deleted successfully!
             <i class="fa-solid fa-delete-left icon"></i>
+          </p>
+        </article>
+      </div>
+
+    <?php } ?>
+
+    <?php if(isset($_GET['success']) && $_GET['success'] === 'update') { ?>
+
+      <div class="l-alert">
+        <article class="alert alert-success">
+          <p class="alert-text">
+            Your task was updated successfully!
+            <i class="fa-solid fa-pencil icon"></i>
           </p>
         </article>
       </div>
@@ -120,7 +137,7 @@
     
     <ul class="l-task">
       <?php foreach($toDoTasks as $task) { ?>
-        <li>
+        <li id="task-<?= $task->id?>">
           <article class="task">
             <h3 class="task-title"><?= $task->task ?></h3>
             <?php if ($task->task_description) { ?>
@@ -130,7 +147,7 @@
             <?php } ?>
 
             <div class="l-end">
-              <button class="fa-solid fa-pen-to-square icon icon-hover" type="button">
+              <button class="fa-solid fa-pen-to-square icon icon-hover" type="button" onclick="showModalUpdate(<?= $task->id?>)">
                 <div class="is-hidden-sr-except">
                   Edit
                 </div>
@@ -142,7 +159,7 @@
                 </div>
               </button>
               
-              <button class="fa-solid fa-trash icon icon-hover" type="button" onclick="deleteTask(<?= $task->id ?>, 'all_tasks')">
+              <button class="fa-solid fa-trash icon icon-hover" type="button" onclick="deleteTask(<?= $task->id ?>, 'home')">
                 <div class="is-hidden-sr-except">
                   Delete
                 </div>
@@ -155,6 +172,41 @@
     <div class="l-center">
       <button class="button" onclick="goAllTasks()">Show all</button>
       <button class="button button-bluepurple" onclick="goNewTask()">New</button>
+    </div>
+
+    <div class="l-modal is-hidden modal-background" id="modal-update">
+      <div class="modal">
+        <div class="modal-inner">
+          <header class="modal-header">
+            <h3 class="modal-title">
+              Change task
+              <i class="fa-solid fa-pencil"></i>
+            </h3>
+          </header>
+
+          <div class="modal-content">
+            <form action="task_controller.php?action=update&pag=home.php" method="post" class="l-form form">
+              <div class="form-control">
+                <input type="text" name="task" id="task" class="text-input" autocomplete="off" placeholder="">
+                <label for="task-l" class="floating-label">Task</label>
+              </div>
+        
+              <div class="form-control">
+                <textarea name="description" id="description" class="text-input" rows="7"></textarea>
+                <label for="description-l" class="floating-label">
+                  Description <small>(optional)</small>
+                </label>
+              </div>
+              <input type="hidden" name="id" id="id">
+
+              <div class="l-center">
+                <button class="button" onclick="hideModalUpdate()" type="button">Cancel</button>
+                <button class="button button-bluepurple" type="submit">Ok</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
   </main>
   <script src="assets/js/main.js"></script>
