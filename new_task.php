@@ -74,6 +74,28 @@
         <ul class="menu is-hidden">
           <li class="menu-item">
             <a class="menu-link" href="home.php">
+              <i class="fa-solid fa-clipboard-list"></i>
+              To do
+            </a>
+          </li>
+          
+          <li class="menu-item">
+            <a class="menu-link" href="all_tasks.php">
+              <i class="fa-solid fa-list"></i>
+              All tasks
+            </a>
+          </li>
+
+          <li class="menu-item">
+            <a class="menu-link" href="new_task.php">
+              <i class="fa-solid fa-plus"></i>
+              New task
+            </a>
+          </li>
+
+          <!-- disabled links -->
+          <!-- <li class="menu-item">
+            <a class="menu-link" href="home.php">
               <i class="fa-solid fa-chart-simple"></i>
               Dashboard
             </a>
@@ -84,7 +106,7 @@
               <i class="fa-solid fa-user"></i>
               My account
             </a>
-          </li>
+          </li> -->
 
           <li class="menu-item">
             <a class="menu-link" href="user_controller.php?action=log-out">
@@ -110,7 +132,7 @@
       </div>
 
       <div class="l-center">
-        <button class="button" type="button" onclick="goHome()">Back</button>
+        <button class="button" type="button" onclick="goBack()">Back</button>
         <button class="button button-bluepurple" type="submit">Add</button>
       </div>
     </form>
