@@ -25,8 +25,11 @@
       $stmt = $pdo->prepare($sql);
       $stmt->bindValue(':id_user', $task->__get('id_user'));
       $stmt->execute();
-      
-      return $stmt->fetchAll(PDO::FETCH_OBJ);
+      $toDoTasks = $stmt->fetchAll(PDO::FETCH_OBJ);
+      foreach($toDoTasks as $task) {
+        $task = $this->preventHTMLInjection($task);
+      }
+      return $toDoTasks;
     }
 
     public function listAll($task) {
@@ -36,7 +39,11 @@
       $stmt->bindValue(':id_user', $task->__get('id_user'));
       $stmt->execute();
       
-      return $stmt->fetchAll(PDO::FETCH_OBJ);
+      $allTasks = $stmt->fetchAll(PDO::FETCH_OBJ);
+      foreach($allTasks as $task) {
+        $task = $this->preventHTMLInjection($task);
+      }
+      return $allTasks;
     }
 
     public function markAsDone($task) {
@@ -72,6 +79,15 @@
       $stmt->bindValue(4, $task->__get('id'));
 
       return $stmt->execute();
+    }
+
+    public function preventHTMLInjection($task) {
+      $task->task = str_replace("<", "&lt;", $task->task);
+      $task->task = str_replace(">", "&gt;", $task->task);
+      $task->task_description = str_replace("<", "&lt;", $task->task_description);
+      $task->task_description = str_replace(">", "&gt;", $task->task_description);
+
+      return $task;
     }
   }
 ?>
