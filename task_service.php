@@ -8,7 +8,7 @@
 
     public function add($task) {
       $sql = '
-        INSERT INTO tb_task(id_user, task, task_description)
+        INSERT INTO tb_task(id_user, task, description)
         VALUES (?, ?, ?)
       ';
       $pdo = $this->connection->connect();
@@ -76,9 +76,9 @@
     }
 
     public function updateTask($task) {
-      if($task->task && $task->task_description && $task->id_user && $task->id) {
+      if($task->task && $task->description && $task->id_user && $task->id) {
         $sql = '
-          UPDATE tb_task SET task = ?, task_description = ?
+          UPDATE tb_task SET task = ?, description = ?
           WHERE id_user = ? AND id = ?
         ';
         $pdo = $this->connection->connect();
@@ -96,8 +96,8 @@
     public function preventHTMLInjection($task) {
       $task->task = str_replace("<", "&lt;", $task->task);
       $task->task = str_replace(">", "&gt;", $task->task);
-      $task->task_description = str_replace("<", "&lt;", $task->task_description);
-      $task->task_description = str_replace(">", "&gt;", $task->task_description);
+      $task->description = str_replace("<", "&lt;", $task->description);
+      $task->description = str_replace(">", "&gt;", $task->description);
 
       return $task;
     }

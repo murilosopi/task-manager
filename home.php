@@ -163,9 +163,9 @@
         <li id="task-<?= $task->id?>">
           <article class="task">
             <h3 class="task-title"><?= $task->task ?></h3>
-            <?php if ($task->task_description) { ?>
+            <?php if ($task->description) { ?>
               <p class="task-desc">
-                <?= str_replace("\n", '<br>', $task->task_description) ?>
+                <?= str_replace("\n", '<br>', $task->description) ?>
               </p>
             <?php } ?>
 

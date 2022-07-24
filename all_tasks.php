@@ -179,8 +179,8 @@
             <?php } ?>
 
 
-            <?php if ($task->task_description) { ?>
-              <p class="task-desc"><?= str_replace("\n", '<br>', $task->task_description); ?></p>
+            <?php if ($task->description) { ?>
+              <p class="task-desc"><?= str_replace("\n", '<br>', $task->description); ?></p>
             <?php } ?>
 
             <div class="l-end">

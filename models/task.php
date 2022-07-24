@@ -3,7 +3,7 @@
     private $id;
     private $id_user;
     private $task;
-    private $task_description;
+    private $description;
     private $done;    
 
     public function __get($attr) {
