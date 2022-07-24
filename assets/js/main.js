@@ -38,7 +38,12 @@ function getUserPath() {
   const prevPage = localStorage.getItem('previous-page');
 
   if(prevPage !== location.href){
-    localStorage.setItem('previous-page', location);
+    let page = location.href;
+    const paramPosition = location.href.indexOf('?');
+    if(paramPosition !== -1) {
+      page = page.slice(0, paramPosition);
+    }
+    localStorage.setItem('previous-page', page);
   } else {
     localStorage.setItem('previous-page', `${location.origin}/task-manager/home.php`);
   }
