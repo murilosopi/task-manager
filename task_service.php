@@ -76,7 +76,7 @@
     }
 
     public function updateTask($task) {
-      if($task->task && $task->description && $task->id_user && $task->id) {
+      if($task->task && $task->id_user && $task->id) {
         $sql = '
           UPDATE tb_task SET task = ?, description = ?
           WHERE id_user = ? AND id = ?
